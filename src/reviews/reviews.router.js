@@ -3,6 +3,6 @@ const controller = require("./reviews.controller");
 const cors = require("cors");
 const corsGet = cors({ methods: "GET" });
 
-router.route("/:reviewId").put(controller.update).delete(controller.destroy);
+router.route("/:reviewId").all(cors()).put(controller.update).delete(controller.destroy);
 
 module.exports = router;
